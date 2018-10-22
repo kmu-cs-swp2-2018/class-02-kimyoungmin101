@@ -114,3 +114,41 @@ if __name__ == '__main__':
     calc.show()
     sys.exit(app.exec_())
 
+    ------------------------------------------------------------------------------------------------------------------------
+    (function.py)
+    
+    from calcFunctions import *
+
+C = [
+    ('factorial (!)', factorial),
+    ('-> binary', decToBin),
+    ('binary -> dec', binToDec),
+    ('-> roman', decToRoman),
+    ]
+
+D = [x[0] for x in C]
+-------------------------------------------------------------------------------------------------------------------------------
+(constant.py)
+A = [
+    ('pi', '3.141592'),
+    ('빛의 이동 속도 (m/s)', '3E+8'),
+    ('소리의 이동 속도 (m/s)', '340'),
+    ('태양과의 평균 거리 (km)', '1.5E+8'),
+    ]
+
+B = [x[0] for x in A]
+
+print(A[B.index('pi')][1])
+---------------------------------------------------------------------------------------------------------------------------------
+(factorial.py)
+def factorial(numStr):
+    try:
+        n = int(numStr)
+        r = str(n)
+        if n == 1:
+            return 1
+        else:
+            return n * factorial(n - 1)
+    except:
+        r = 'Error!'
+    return r
